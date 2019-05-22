@@ -1,0 +1,321 @@
+{
+    "Fa0": {
+        "data": {
+            "duplex": "auto",
+            "interface": "Fa0",
+            "name": "                       ",
+            "speed": "auto",
+            "status": "disabled",
+            "type": " 10/100BaseTX",
+            "vlan": "routed"
+        }
+    },
+    "Gi1/0/1": {
+        "data": {
+            "duplex": "auto",
+            "interface": "Gi1/0/1",
+            "name": "                   ",
+            "speed": "auto",
+            "status": "notconnect",
+            "type": " 10/100/1000BaseTX",
+            "vlan": "1"
+        }
+    },
+    "Gi1/0/10": {
+        "data": {
+            "duplex": "a-full",
+            "interface": "Gi1/0/10",
+            "name": "vsxseso1-int-mgmt-",
+            "speed": "a-1000",
+            "status": "connected",
+            "type": " 10/100/1000BaseTX",
+            "vlan": "205"
+        }
+    },
+    "Gi1/0/11": {
+        "data": {
+            "duplex": "auto",
+            "interface": "Gi1/0/11",
+            "name": "                  ",
+            "speed": "auto",
+            "status": "disabled",
+            "type": " 10/100/1000BaseTX",
+            "vlan": "1"
+        }
+    },
+    "Gi1/0/12": {
+        "data": {
+            "duplex": "a-full",
+            "interface": "Gi1/0/12",
+            "name": "vsxseso1-ext-mgmt ",
+            "speed": "a-1000",
+            "status": "connected",
+            "type": " 10/100/1000BaseTX",
+            "vlan": "205"
+        }
+    },
+    "Gi1/0/13": {
+        "data": {
+            "duplex": "auto",
+            "interface": "Gi1/0/13",
+            "name": "                  ",
+            "speed": "auto",
+            "status": "notconnect",
+            "type": " 10/100/1000BaseTX",
+            "vlan": "1"
+        }
+    },
+    "Gi1/0/14": {
+        "data": {
+            "duplex": "a-full",
+            "interface": "Gi1/0/14",
+            "name": "mgmt-ddos         ",
+            "speed": "a-1000",
+            "status": "connected",
+            "type": " 10/100/1000BaseTX",
+            "vlan": "205"
+        }
+    },
+    "Gi1/0/15": {
+        "data": {
+            "duplex": "auto",
+            "interface": "Gi1/0/15",
+            "name": "                  ",
+            "speed": "auto",
+            "status": "notconnect",
+            "type": " 10/100/1000BaseTX",
+            "vlan": "1"
+        }
+    },
+    "Gi1/0/16": {
+        "data": {
+            "duplex": "auto",
+            "interface": "Gi1/0/16",
+            "name": "                  ",
+            "speed": "auto",
+            "status": "notconnect",
+            "type": " 10/100/1000BaseTX",
+            "vlan": "1"
+        }
+    },
+    "Gi1/0/17": {
+        "data": {
+            "duplex": "auto",
+            "interface": "Gi1/0/17",
+            "name": "newwanoptseso1-mgm",
+            "speed": "auto",
+            "status": "notconnect",
+            "type": " 10/100/1000BaseTX",
+            "vlan": "205"
+        }
+    },
+    "Gi1/0/18": {
+        "data": {
+            "duplex": "auto",
+            "interface": "Gi1/0/18",
+            "name": "                  ",
+            "speed": "auto",
+            "status": "notconnect",
+            "type": " 10/100/1000BaseTX",
+            "vlan": "1"
+        }
+    },
+    "Gi1/0/19": {
+        "data": {
+            "duplex": "auto",
+            "interface": "Gi1/0/19",
+            "name": "                  ",
+            "speed": "auto",
+            "status": "notconnect",
+            "type": " 10/100/1000BaseTX",
+            "vlan": "1"
+        }
+    },
+    "Gi1/0/2": {
+        "data": {
+            "duplex": "auto",
+            "interface": "Gi1/0/2",
+            "name": "                   ",
+            "speed": "auto",
+            "status": "notconnect",
+            "type": " 10/100/1000BaseTX",
+            "vlan": "1"
+        }
+    },
+    "Gi1/0/20": {
+        "data": {
+            "duplex": "auto",
+            "interface": "Gi1/0/20",
+            "name": "                  ",
+            "speed": "auto",
+            "status": "notconnect",
+            "type": " 10/100/1000BaseTX",
+            "vlan": "1"
+        }
+    },
+    "Gi1/0/21": {
+        "data": {
+            "duplex": "a-full",
+            "interface": "Gi1/0/21",
+            "name": "fwconseso1        ",
+            "speed": "a-1000",
+            "status": "connected",
+            "type": " 10/100/1000BaseTX",
+            "vlan": "205"
+        }
+    },
+    "Gi1/0/22": {
+        "data": {
+            "duplex": "auto",
+            "interface": "Gi1/0/22",
+            "name": "                  ",
+            "speed": "auto",
+            "status": "notconnect",
+            "type": " 10/100/1000BaseTX",
+            "vlan": "1"
+        }
+    },
+    "Gi1/0/23": {
+        "data": {
+            "duplex": "auto",
+            "interface": "Gi1/0/23",
+            "name": "                  ",
+            "speed": "auto",
+            "status": "notconnect",
+            "type": " 10/100/1000BaseTX",
+            "vlan": "1"
+        }
+    },
+    "Gi1/0/24": {
+        "data": {
+            "duplex": "auto",
+            "interface": "Gi1/0/24",
+            "name": "                  ",
+            "speed": "auto",
+            "status": "notconnect",
+            "type": " 10/100/1000BaseTX",
+            "vlan": "1"
+        }
+    },
+    "Gi1/0/25": {
+        "data": {
+            "duplex": "a-full",
+            "interface": "Gi1/0/25",
+            "name": "                  ",
+            "speed": "a-1000",
+            "status": "connected",
+            "type": " 1000BaseLX SFP",
+            "vlan": "trunk"
+        }
+    },
+    "Gi1/0/26": {
+        "data": {
+            "duplex": "a-full",
+            "interface": "Gi1/0/26",
+            "name": "                  ",
+            "speed": "a-1000",
+            "status": "connected",
+            "type": " 1000BaseSX SFP",
+            "vlan": "trunk"
+        }
+    },
+    "Gi1/0/27": {
+        "data": {
+            "duplex": "auto",
+            "interface": "Gi1/0/27",
+            "name": "                  ",
+            "speed": "auto",
+            "status": "notconnect",
+            "type": " Not Present",
+            "vlan": "1"
+        }
+    },
+    "Gi1/0/28": {
+        "data": {
+            "duplex": "auto",
+            "interface": "Gi1/0/28",
+            "name": "                  ",
+            "speed": "auto",
+            "status": "notconnect",
+            "type": " Not Present",
+            "vlan": "1"
+        }
+    },
+    "Gi1/0/3": {
+        "data": {
+            "duplex": "auto",
+            "interface": "Gi1/0/3",
+            "name": "                   ",
+            "speed": "auto",
+            "status": "notconnect",
+            "type": " 10/100/1000BaseTX",
+            "vlan": "1"
+        }
+    },
+    "Gi1/0/4": {
+        "data": {
+            "duplex": "auto",
+            "interface": "Gi1/0/4",
+            "name": "                   ",
+            "speed": "auto",
+            "status": "notconnect",
+            "type": " 10/100/1000BaseTX",
+            "vlan": "1"
+        }
+    },
+    "Gi1/0/5": {
+        "data": {
+            "duplex": "auto",
+            "interface": "Gi1/0/5",
+            "name": "                   ",
+            "speed": "auto",
+            "status": "notconnect",
+            "type": " 10/100/1000BaseTX",
+            "vlan": "1"
+        }
+    },
+    "Gi1/0/6": {
+        "data": {
+            "duplex": "auto",
+            "interface": "Gi1/0/6",
+            "name": "                   ",
+            "speed": "auto",
+            "status": "notconnect",
+            "type": " 10/100/1000BaseTX",
+            "vlan": "1"
+        }
+    },
+    "Gi1/0/7": {
+        "data": {
+            "duplex": "auto",
+            "interface": "Gi1/0/7",
+            "name": " cc209-wan01--tufin",
+            "speed": "auto",
+            "status": "notconnect",
+            "type": " 10/100/1000BaseTX",
+            "vlan": "201"
+        }
+    },
+    "Gi1/0/8": {
+        "data": {
+            "duplex": "auto",
+            "interface": "Gi1/0/8",
+            "name": "                   ",
+            "speed": "auto",
+            "status": "disabled",
+            "type": " 10/100/1000BaseTX",
+            "vlan": "1"
+        }
+    },
+    "Gi1/0/9": {
+        "data": {
+            "duplex": "auto",
+            "interface": "Gi1/0/9",
+            "name": "                   ",
+            "speed": "auto",
+            "status": "notconnect",
+            "type": " 10/100/1000BaseTX",
+            "vlan": "1"
+        }
+    }
+}

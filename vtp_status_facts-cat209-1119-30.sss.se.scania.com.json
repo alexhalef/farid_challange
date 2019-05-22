@@ -1,0 +1,15 @@
+{
+    "configuration_last_modified": "10.5.255.216 at 5-31-16 08:43:49",
+    "configuration_revision": "136",
+    "device_id": "dcce.c1cf.ef00",
+    "existing_vlans": "69",
+    "max_vlans": "1005",
+    "md5_digest": "0xEA 0xA5 0x98 0xCC 0x49 0xA5 0x05 0xF2 ",
+    "vtp_domain": "domain_b209_wan",
+    "vtp_mode": "Client",
+    "vtp_pruning_mode": "Disabled",
+    "vtp_traps_generation": "Disabled",
+    "vtp_v2_mode": null,
+    "vtp_version_capable": "1 to 3",
+    "vtp_version_running": "2"
+}

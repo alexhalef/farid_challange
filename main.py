@@ -41,11 +41,10 @@ def order_by_vtp_domain(json_files):
             vlan_data = json.loads(vlan_file.read())
             domain = vtp_data['vtp_domain']
 
-            domain_exists = domain_and_vlans.get(domain)
-            if domain_exists:
+            if domain in domain_and_vlans:
                 domain_and_vlans[domain].update({'vlan_name': 2})
             else: 
-                domain_and_vlans.update({domain: {'vlan_name': 1}})
+                domain_and_vlans.update({domain: {}})
             i += 1
 
     print(domain_and_vlans)

@@ -3,15 +3,9 @@ import os
 import glob
 import json
 
-def main():
-    cwd = os.getcwd()
-    os.chdir(cwd)
-    # Make a List of all the Json files in the cwd
-    json_files = glob.glob('*.json')
-
+def unique(list1): 
     #Outputs list of unique vtp domains
     unique_vtp_domains = []
-    def unique(list1): 
     # insert the list to the set 
         list_set = set(list1)
         # convert the set to the list 
@@ -19,7 +13,7 @@ def main():
         for x in unique_list: 
             unique_vtp_domains.append(x)
 
-    #Not complete, order vlan in same vtp domain
+#Not complete, order vlan in same vtp domain
     def order_by_vtp_domain(json_files):
         pattern = re.compile(r'vtp_status_facts-([^,\s]+).json')
         matches = filter(pattern.search, json_files)
@@ -54,5 +48,13 @@ def main():
         
         item_list_interface = {}
         sameVtpDomain = {}
+
+def main():
+    cwd = os.getcwd()
+    os.chdir(cwd)
+    # Make a List of all the Json files in the cwd
+    json_files = glob.glob('*.json')
     order_by_vtp_domain(json_files)
-main()
+
+if __name__ == '__main__':
+    main()

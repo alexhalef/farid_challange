@@ -3,55 +3,57 @@ import os
 import glob
 import json
 
-def unique(list1): 
-    #Outputs list of unique vtp domains
-    unique_vtp_domains = []
+def unique(list1):
     # insert the list to the set 
-        list_set = set(list1)
-        # convert the set to the list 
-        unique_list = (list(list_set)) 
-        for x in unique_list: 
-            unique_vtp_domains.append(x)
+    list_set = set(list1)
+    # convert the set to the list 
+    unique_list = (list(list_set)) 
+    for x in unique_list: 
+        unique_vtp_domains.append(x)
 
 #Not complete, order vlan in same vtp domain
-    def order_by_vtp_domain(json_files):
-        pattern = re.compile(r'vtp_status_facts-([^,\s]+).json')
-        matches = filter(pattern.search, json_files)
-        #List of interface hostname
-        interface_hostnames = []
-        if matches:
-            for match in matches:
-                interface_hostnames.append(pattern.search(match).group(1))
+def order_by_vtp_domain(json_files):
+    pattern = re.compile(r'vtp_status_facts-([^,\s]+).json')
+    matches = filter(pattern.search, json_files)
+    #List of interface hostname
+    interface_hostnames = []
+    if matches:
+        for match in matches:
+            interface_hostnames.append(pattern.search(match).group(1))
 
-        vtp_domains = []
-        vtpDomainsAndSameVlans = {'domain':[]}
-        counter = 0
-        #Loop interfaces vtp domains and list them
-        for item in interface_hostnames:
-            with open('vtp_status_facts-{}.json'.format(interface_hostnames[counter])) as vtp_file:
-                vtp_data = json.loads(vtp_file.read())
-                vtp_domains.append(vtp_data['vtp_domain'])
-                counter += 1
-        #List only unique vtp domains      
-        unique(vtp_domains)
-        #List vlans with same vtp domains
-        i = 0
-        for item in interface_hostnames:
-            with open('vtp_status_facts-{}.json'.format(interface_hostnames[i])) as vtp_file:
-                vtp_data = json.loads(vtp_file.read())
-                for domain in unique_vtp_domains:
-                    if vtp_data['vtp_domain'] == domain:
-                        for item in vtpDomainsAndSameVlans:
-                            if vtp_data['vtp_domain'] in vtpDomainsAndSameVlans:
-                                vtpDomainsAndSameVlans[item].append(vtp_data)
-                                print(1)
-        
-        item_list_interface = {}
-        sameVtpDomain = {}
+    vtp_domains = []
+    counter = 0
+    #Loop interfaces vtp domains and list them
+    for item in interface_hostnames:
+        with open('vtp_status_facts-{}.json'.format(interface_hostnames[counter])) as vtp_file:
+            vtp_data = json.loads(vtp_file.read())
+            vtp_domains.append(vtp_data['vtp_domain'])
+            counter += 1
+    #List only unique vtp domains      
+    unique(vtp_domains)
+    #List vlans with same vtp domains
+    domain_and_vlans = {}
 
+    i = 0
+    for item in interface_hostnames:
+        with open('vtp_status_facts-{}.json'.format(interface_hostnames[i])) as vtp_file, open('interfaces_status_facts-{}.json'.format(interface_hostnames[i])) as vlan_file:
+            vtp_data = json.loads(vtp_file.read())
+            vlan_data = json.loads(vlan_file.read())
+            domain = vtp_data['vtp_domain']
+
+            domain_exists = domain_and_vlans.get(domain)
+            if domain_exists:
+                domain_and_vlans[domain].update({'vlan_name': 2})
+            else: 
+                domain_and_vlans.update({domain: {'vlan_name': 1}})
+            i += 1
+
+    print(domain_and_vlans)
+unique_vtp_domains = []
 def main():
+    #Outputs list of unique vtp domains
     cwd = os.getcwd()
-    os.chdir(cwd)
+    os.chdir('interfaces/')
     # Make a List of all the Json files in the cwd
     json_files = glob.glob('*.json')
     order_by_vtp_domain(json_files)

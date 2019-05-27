@@ -33,6 +33,7 @@ def order_by_vtp_domain(json_files):
     unique(vtp_domains)
     #List vlans with same vtp domains
     domain_and_vlans = {}
+    vlans = {}
 
     i = 0
     for item in interface_hostnames:
@@ -41,13 +42,16 @@ def order_by_vtp_domain(json_files):
             vlan_data = json.loads(vlan_file.read())
             domain = vtp_data['vtp_domain']
 
+            for item,key in vlan_data.items():
+                if vlan in vlans:
+            
+            #check if domain in dictonary, if not update it with dictonary
             if domain in domain_and_vlans:
                 domain_and_vlans[domain].update({'vlan_name': 2})
             else: 
                 domain_and_vlans.update({domain: {}})
             i += 1
 
-    print(domain_and_vlans)
 unique_vtp_domains = []
 def main():
     #Outputs list of unique vtp domains

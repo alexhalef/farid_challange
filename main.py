@@ -42,7 +42,7 @@ def order_by_vtp_domain(json_files):
                 else:
                     domain_and_vlans.update({domain: {vlan: 1}})
             i += 1
-
+            
 def main():
     #Outputs list of unique vtp domains
     cwd = os.getcwd()

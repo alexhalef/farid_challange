@@ -3,14 +3,6 @@ import os
 import glob
 import json
 
-def unique(list1):
-    # insert the list to the set 
-    list_set = set(list1)
-    # convert the set to the list 
-    unique_list = (list(list_set)) 
-    for x in unique_list: 
-        unique_vtp_domains.append(x)
-
 #Not complete, order vlan in same vtp domain
 def order_by_vtp_domain(json_files):
     pattern = re.compile(r'vtp_status_facts-([^,\s]+).json')
@@ -29,11 +21,8 @@ def order_by_vtp_domain(json_files):
             vtp_data = json.loads(vtp_file.read())
             vtp_domains.append(vtp_data['vtp_domain'])
             counter += 1
-    #List only unique vtp domains      
-    unique(vtp_domains)
     #List vlans with same vtp domains
     domain_and_vlans = {}
-    vlans = {}
 
     i = 0
     for item in interface_hostnames:
@@ -41,18 +30,19 @@ def order_by_vtp_domain(json_files):
             vtp_data = json.loads(vtp_file.read())
             vlan_data = json.loads(vlan_file.read())
             domain = vtp_data['vtp_domain']
-
-            for item,key in vlan_data.items():
-                if vlan in vlans:
             
-            #check if domain in dictonary, if not update it with dictonary
-            if domain in domain_and_vlans:
-                domain_and_vlans[domain].update({'vlan_name': 2})
-            else: 
-                domain_and_vlans.update({domain: {}})
+            for item,key in vlan_data.items():
+                vlan = key['data']['vlan']
+                #check if domain in dictonary, if not update it with dictonary
+                if domain in domain_and_vlans and vlan in domain_and_vlans[domain]:
+                    vlan_counter = domain_and_vlans[domain].get(vlan)
+                    vlan_counter += 1
+                    domain_and_vlans[domain].update({vlan: vlan_counter})
+                    print(domain_and_vlans)
+                else:
+                    domain_and_vlans.update({domain: {vlan: 1}})
             i += 1
 
-unique_vtp_domains = []
 def main():
     #Outputs list of unique vtp domains
     cwd = os.getcwd()
